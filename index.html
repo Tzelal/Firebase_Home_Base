@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<!-- Complete Project Details at: https://RandomNerdTutorials.com/ -->
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <!-- update the version number as needed -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+
+  <!-- include only the Firebase features as you need -->
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+
+  <script>
+    // REPLACE WITH YOUR web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyAsp63c8JALi0_iTFEvLXtk_ElDnocQ4IU",
+      authDomain: "tzell.net",
+      databaseURL: "https://esp32-firebase-demo-e6a98-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "esp32-firebase-demo-e6a98",
+      storageBucket: "esp32-firebase-demo-e6a98.appspot.com",
+      messagingSenderId: "1059069177344",
+      appId: "1:1059069177344:web:f87260cf7eb290f59532e5"
+    };
+
+    // Initialize firebase
+    firebase.initializeApp(firebaseConfig);
+
+    // Make auth and database references
+    const auth = firebase.auth();
+    const db = firebase.database();
+  </script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+
+
+  <!--LOGIN FORM-->
+  <form id="login-form" style="display: none;">
+    <div class="form-elements-container">
+
+      <label for="input-email"><b>Email</b></label>
+      <input type="text" placeholder="Enter Username" id="input-email" required>
+
+      <label for="input-password"><b>Password</b></label>
+      <input type="password" placeholder="Enter Password" id="input-password" required>
+
+      <button type="submit" id="login-button">Login</button>
+
+      <p id="error-message" style="color:rgb(12, 2, 2);"></p>
+    </div>
+  </form>
+
+
+
+  <!--CONTENT (SENSOR READINGS)-->
+  <div class="content-sign-in" id="content-sign-in" style="display: none;">
+
+
+    <!--AUTHENTICATION BAR (USER DETAILS/LOGOUT BUTTON)-->
+    <div id="authentication-bar" style="display: none;">
+
+      <!--TOP BAR-->
+      <div class="menu">
+        <a href="https://www.linkedin.com/in/tzelal-efenti-6b6015108/">LinkedIN Address</a>
+      </div>
+
+      <p><span id="authentication-status">User logged in</span>
+        <span id="user-details">USEREMAIL</span>
+        <a href="/" id="logout-link">(logout)</a>
+      </p>
+
+      <div class="card-grid">
+
+        <!--CARD FOR GPIO 2-->
+        <div class="card">
+          <p class="card-title"><i class="fas fa-lightbulb"></i> GPIO 2</p>
+          <p>
+            <button class="button-on" id="btn1On">ON</button>
+            <button class="button-off" id="btn1Off">OFF</button>
+          </p>
+          <p class="state">State:<span id="state1"></span></p>
+        </div>
+
+        <!--CARD FOR GPIO 13-->
+        <div class="card">
+          <p class="card-title"><i class="fas fa-lightbulb"></i> GPIO 13</p>
+          <p>
+            <button class="button-on" id="btn2On">ON</button>
+            <button class="button-off" id="btn2Off">OFF</button>
+          </p>
+          <p class="state">State:<span id="state2"></span></p>
+        </div>
+
+        <!--CARD FOR GPIO 14-->
+        <div class="card">
+          <p class="card-title"><i class="fas fa-lightbulb"></i> GPIO 14</p>
+          <p>
+            <button class="button-on" id="btn3On">ON</button>
+            <button class="button-off" id="btn3Off">OFF</button>
+          </p>
+          <p class="state">State:<span id="state3"></span></p>
+        </div>
+      </div>
+
+      <div class="note">
+        <p>
+          This website has created by Tzelal for test purposses.
+        </p>
+      </div>
+
+    </div>
+  </div>
+  <!--CARD FOR GPIO 14-->
+
+  <script src="scripts/auth.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
