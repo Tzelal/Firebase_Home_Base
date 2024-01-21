@@ -1,4 +1,4 @@
-/*
+
 html {
 
     font-family: 'Playfair Display', serif;
@@ -59,23 +59,7 @@ button {
     padding: 20px;
 }
 
-*/
 
-body {
-    margin: 5%;
-    width: auto;
-    height: auto;
-    justify-content: center;
-    align-items: center;
-    background: url("1694390554029.jpg");
-    background-repeat: no-repeat;
-    background-position: bottom;
-    background-attachment: fixed;
-    background-size: contain;
-
-}
-
-/*
 
 body {
     margin: 5%;
@@ -175,7 +159,7 @@ a:link {
     text-decoration: none;
 }
 
-*/
+
 
 /*
 a:hover {
@@ -183,9 +167,7 @@ a:hover {
     background-color: transparent;
     text-decoration: none;
 }
-*/
 
-/*
 .note {
     padding-top: 4rem;
     font-size: 1.8rem;
